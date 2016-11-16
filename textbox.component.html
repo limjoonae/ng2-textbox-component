@@ -1,0 +1,31 @@
+<!--<div class="container">-->
+	<div class="form-group">
+		<app-label [label]="label" [require]="require"></app-label>
+		<div *ngIf="type == 'text'">
+			<input class="form-control {{colorClass}}" type="text" [id]="id" [name]="name" [placeholder]="placeholder" [customDisabled]="disable" [customReadonly]="readonly"
+				[value]="defaultText" [customMaxlength]="maxlength">
+		</div>
+		<div *ngIf="type == 'password'">
+			<input class="form-control {{colorClass}}" [id]="id" [name]="name" [placeholder]="placeholder" [customDisabled]="disable" [customReadonly]="readonly"
+				type="password" [customMaxlength]="maxlength">
+		</div>
+		<div *ngIf="type == 'number'">
+			<input #input class="form-control {{colorClass}}" [id]="id" [name]="name" [placeholder]="placeholder" [customDisabled]="disable"
+				[customReadonly]="readonly" type="number" [value]="defaultText" [customMaxlength]="maxlength" (blur)="validateNumberIncludeZero(input.value)">
+			<small id="{{id}}_warningText" class="form-text text-muted"><font color="red">{{warningTextInput}}</font></small>
+		</div>
+		<div *ngIf="type == 'currency' ">
+			<input #input class="form-control {{colorClass}}" [id]="id" [name]="name" [placeholder]="placeholder" [customDisabled]="disable" [customReadonly]="readonly"
+				type="currency" [value]="defaultText" (focus)="clearFormat(input.value)" (blur)="validateCurrency(input.value)">
+			<small id="{{id}}_warningText" class="form-text text-muted"><font color="red">{{warningTextInput}}</font></small>
+		</div>
+		<div *ngIf="type == 'email' ">
+			<input #input class="form-control {{colorClass}}" type="email" [id]="id" [name]="name" [placeholder]="placeholder" [customDisabled]="disable"
+				[customReadonly]="readonly" [value]="defaultText" [customMaxlength]="maxlength" (blur)="validateEmail(input.value)">
+			<small id="{{id}}_warningText" class="form-text text-muted"><font color="red">{{warningTextInput}}</font></small>
+		</div>
+		<div *ngIf="type == 'hidden' ">
+			<input [id]="id" type="hidden" [value]="defaultText">
+		</div>
+	</div>
+<!--</div>-->
