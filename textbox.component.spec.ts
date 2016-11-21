@@ -26,8 +26,4 @@ describe('TextboxComponent', () => {
   //   expect(component).toBeTruthy();
   // });
 
-  // it(`should be define function 'validateCurrency'`, () => {
-  //   expect(component.validateNumberIncludeZero('0')).toEqual(true);
-  // });
-
 });

@@ -13,7 +13,7 @@ import { TextboxComponent } from './textbox.component';
     LabelComponent,
     CustomDisabledDirective, 
     CustomReadonlyDirective, 
-    CustomMaxlengthDirective
+    CustomMaxlengthDirective,
   ]
 })
 export class TextboxModule { }
