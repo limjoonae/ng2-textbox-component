@@ -29,7 +29,8 @@ export class ValidationService {
 
   validateNumber(value: string): boolean {
 
-    let pattern = /^-?((([0-9]\d*)(\.[0-9]\d*){0,1})|(([0])(\.[0-9]\d*){0,1}))$/;
+    // let pattern = /^-?((([0-9]\d*)(\.[0-9]\d*){0,1})|(([0])(\.[0-9]\d*){0,1}))$/;
+    let pattern = /^-?(([0-9]\d*)(\.[0-9]\d*){0,1})$/;
 
     if(value != '' && !pattern.test(value)){
       return false;
