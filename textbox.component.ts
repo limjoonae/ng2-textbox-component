@@ -54,9 +54,11 @@ export class TextboxComponent implements OnInit {
 
   validateEmail(value: string): void { 
     let isValid = this._validationService.validateEmail(value);
-    if(!isValid){
+    if(isValid) {
+      this.warningTextInput = ''; 
+    } else { 
       this.warningTextInput = this._validationService.getWarningMessage(this.warningText, 'please input valid email');
-    } else { this.warningTextInput = ''; }
+    }
   }
 
   validateInteger(value: string): void {
