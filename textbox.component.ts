@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SelectColorThemeService } from '../service/select-color-theme.service';
+import { BootstrapClassService } from '../service/bootstrap-class.service';
 import { ValidationService } from './service/validation.service';
 import { TransformService } from './service/transform.service';
 
@@ -7,7 +7,7 @@ import { TransformService } from './service/transform.service';
   selector: 'gos-textbox',
   templateUrl: './textbox.component.html',
   styleUrls: ['./textbox.component.css'],
-  providers: [ SelectColorThemeService,  ValidationService, TransformService]
+  providers: [ BootstrapClassService,  ValidationService, TransformService]
 })
 export class TextboxComponent implements OnInit {
 
@@ -30,12 +30,12 @@ export class TextboxComponent implements OnInit {
   private warningTextInput: string;
   private numeral = require('numeral');
 
-  constructor(private _selectColorThemeService: SelectColorThemeService, 
+  constructor(private _bootstrapClassService: BootstrapClassService, 
               private _validationService: ValidationService,
               private _transformStringNumber: TransformService) { }
 
   ngOnInit() {
-    this.colorClass = this._selectColorThemeService.getColorTheme(this._colorClassPrefix, this.colorTheme);
+    this.colorClass = this._bootstrapClassService.setColorTheme(this._colorClassPrefix, this.colorTheme);
     this.placeholder = this.getPlaceHolder(this.placeholder);
     this.defaultText = this.getDefaultText(this.defaultValue);
   }
